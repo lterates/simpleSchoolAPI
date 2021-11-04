@@ -11,7 +11,7 @@ router.route('/').get(function(req, res) {
     }
 }).post([
     body('email').notEmpty().isEmail(),
-    body('nome').notEmpty().isString(),
+    body('nome').notEmpty().isString().escape(),
     body('uc').notEmpty().isString().escape(),
 ],function(req, res) { 
     const errors = validationResult(req); 
